@@ -1,0 +1,271 @@
+.accordionItem {
+  display: flex;
+  position: relative;
+  flex: 1 1 auto ;
+
+}
+.accordionInput {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+
+}
+.accordionLabel {
+  font-family: SF Pro Display;
+  width: 85px;
+  padding: 20px;
+  border-left: 4px solid white;
+  cursor: pointer;
+  color: #FFFFFF;
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 600;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: end;
+
+  background-size: cover;
+  background-position: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient( #162C4E, rgba(22, 44, 78, 0.59));
+    z-index: 0;
+  }
+}
+.accordionLabel h3 {
+
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 500;
+  transform: rotate(-0deg);
+
+}
+.accordionLabel h2 {
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+  margin-bottom: 2rem;
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 500;
+}
+.accordionContent {
+  background-size: cover;
+  background-position: center;
+  border-top: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  width: 0;
+  will-change: width;
+  transition: 0.3s linear;
+
+}
+.contentInfo {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36%;
+  height: 100%;
+  padding: 78px 66px 50px 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  &::before {
+    content: '';
+    position: absolute;
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(2px);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+}
+.eventNumber {
+  z-index: 3;
+  font-weight: 600;
+  font-size: 380px;
+  line-height: 380px;
+  color: rgba(255, 255, 255, 0.04);
+  position: absolute;
+  top: -26px;
+  left: -130px;
+}
+.eventInfo {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #FFFFFF;
+}
+.eventInfo h2 {
+ font-size: 24px;
+  line-height: 29px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.eventInfo span {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 200;
+  margin-bottom: 25px;
+}
+.eventInfo a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  line-height: 22px;
+  width: 256px;
+  height: 62px;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  background: none;
+  border: 1px solid white;
+  border-left: 7px solid white;
+}
+.accordionInput:checked ~ .accordionLabel {
+
+  border-left: 1px solid white;
+  &::before {
+    background: #162C4E;
+    opacity: 1;
+  }
+}
+.accordionInput:checked ~ .accordionItem {
+  flex: 1 1 auto;
+
+}
+
+@media (max-width: 2000px) {
+  .accordionInput:checked ~ .accordionContent {
+    flex: 1 1 auto;;
+    width: 950px;
+  }
+}
+#lastLabel {
+  border: none
+}
+
+@media (max-width: 1700px) {
+  .accordionItem {
+    flex-direction: column;
+    border-top: 4px solid white;
+    border-left: none;
+
+  }
+  .accordionLabel {
+    padding: 27px 0 30px 40px;
+    width: 100%;
+    height: 85px;
+    flex-direction: row-reverse;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+  .accordionLabel h2 {
+    font-size: 24px;
+    writing-mode: inherit;
+    transform: rotate(0deg);
+    margin-bottom: 0;
+    margin-left: 32px;
+  }
+  .accordionLabel h3 {
+    font-size: 32px;
+    transform: rotate(0deg);
+  }
+  .accordionContent {
+    height: 0;
+    will-change: height;
+    width: 100%;
+    transition: 0.3s linear;
+  }
+  .accordionInput:checked ~ .accordionContent {
+    flex: 1 1 auto;;
+    height: 460px;
+    width: 100%;
+  }
+  .contentInfo {
+    padding-bottom: 20px;
+    width: 100%;
+    height: 42%;
+    position: absolute;
+    top: 58%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    &::before {
+      content: '';
+      position: absolute;
+      background: rgba(18, 18, 18, 0.8);
+      backdrop-filter: blur(2px);
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+    }
+  }
+  .eventInfo a {
+    font-size: 16px;
+    line-height: 19px;
+    width: 169px;
+    height: 44px;
+    align-items: center;
+    font-weight: 200;
+    letter-spacing: inherit;
+  }
+  .eventInfo h2 {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .eventInfo span {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 200;
+    margin-bottom: 25px;
+  }
+  .eventNumber {
+    font-weight: 600;
+    font-size: 152px;
+    line-height: 80px;
+    top: 26px;
+    left: 76%;
+  }
+}
+
+@media (max-width: 600px) {
+  .accordionLabel {
+    padding: 20px 0 20px 20px;
+    height: 64px;
+  }
+  .accordionLabel h2 {
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-left: 16px;
+  }
+  .accordionLabel h3 {
+    font-size: 24px;
+  }
+  .eventNumber {
+   font-size: 80px;
+  }
+  
+}

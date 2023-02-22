@@ -2,16 +2,8 @@
   height: 213px;
   width: 100%;
   position: relative;
-  //display: flex;
-  //align-items: center;
-  //justify-content: center;
 }
-
-
-
-
 .info {
-  //border: 1px solid black;
   position: absolute;
   transform: translate(-50%, 50%);
   left: 50%;
@@ -20,12 +12,22 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  animation: info 0.5s;
 }
+@keyframes info {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 50%);
+  }
 
+}
 .logo {
   width: 190px;
 }
-
 @media (max-width: 940px) {
   .header {
     height: 326px;
@@ -34,20 +36,14 @@
     top: 65px;
     left: 48%;
   }
-
-
 }
-
 @media (max-width: 440px) {
-
   .header {
     height: 186px;
   }
   .logo {
     width: 128px;
   }
-
-
 }
 
 

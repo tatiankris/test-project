@@ -19,7 +19,6 @@ function Item({text, name, ...props}: ItemPropsType) {
                     </svg>
                 </div>
 
-
             </div>
             {
                 name !== 'Seconds' && name !== 'SS' && <div className={s.num}>:</div>

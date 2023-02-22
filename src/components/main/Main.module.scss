@@ -1,70 +1,54 @@
 .main {
-  height: 100%;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  //font-family: 'Poppins', sans-serif ;
-
   margin-bottom: 76px;
 }
-
 .title {
   font-weight: 700;
   font-size: 72px;
-  color: #162C4E;
-  opacity: 0.39;
+  color: #162C4E63;
   text-align: center;
   text-transform: uppercase;
   line-height: 75px;
 }
-
 p {
   text-align: center;
   color: rgba(0, 0, 0, 0.8);
   font-weight: 500;
   font-size: 18px;
-  //line-height: 27px;
 }
-
-
 .improveInfo {
   max-width: 426px;
   margin-top: 8px;
   margin-bottom: 32px;
   line-height: 24px;
-
 }
-
-
-
 .eventPageCheck {
   margin-top: 72px;
   margin-bottom: 12px;
 }
-
-button, .goToButton {
-
+.goToButton {
   text-decoration: none;
-   color: #FFFFFF;
-   font-weight: 400;
-   font-size: 18px;
-    border: none;
-    background: #1D4169;
-   border-radius: 40px;
-   width: 240px;
-   height: 60px;
-   padding: 15px 0 15px 28px ;
-   text-align: left;
-
-    position: relative;
-
+  border: none;
   &:hover {
     background: #162c4e;
   }
   &:active {
     background: #162c4e;
   }
+   color: #FFFFFF;
+   font-weight: 400;
+   font-size: 18px;
+   background: #1D4169;
+   border-radius: 40px;
+   width: 240px;
+   height: 60px;
+   padding: 15px 0 15px 28px ;
+   text-align: left;
+   position: relative;
  }
 
 .arrow {
@@ -101,5 +85,36 @@ button, .goToButton {
 @media (max-width: 440px) {
   .main {
     margin-bottom: 86px;
+  }
+}
+
+
+.first {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: first 0.8s;
+}
+.second {
+
+
+  animation: first 1s;
+}
+.third {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: first 1.3s;
+}
+@keyframes first {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

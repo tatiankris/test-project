@@ -6,22 +6,20 @@ import './App.css'
 import React from "react";
 import leftDecorate from './assets/leftDecorate.svg'
 import rightDecorate from './assets/rightDecorate.svg'
+import Gallery from './components/gallery/Gallery';
 
 
 function App() {
-
-
   return (
     <div className={'app'}>
         <img className={'leftDecorate'} src={leftDecorate} />
         <img className={'rightDecorate'} src={rightDecorate} />
-
         <div className={'container'}>
-            <Header />
-            <Main />
+            <Header/>
+            <Main/>
+            <Footer/>
         </div>
-        <Footer />
-
+        <Gallery/>
     </div>
   )
 }

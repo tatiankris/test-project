@@ -1,53 +1,30 @@
 .footer {
+  font-family: Poppins;
   height: 192px;
   width: 100%;
   background: #162C4E;
-  //position: fixed;
-  position: static;
-   //position: fixed;
-  //
-  left: 0;
-
-  bottom: 0;
-  //display: flex;
-  //align-items: center;
-  //justify-content: center;
-
-
-  font-family: 'Poppins', sans-serif ;
-
-
+  position: relative;
 }
 
 .inputBox {
-  position: relative;
-}
-.inputForm {
-
   position: absolute;
   transform: translate(-50%, 50%);
   left: 50%;
-  top: 2em;
+  top: 20%;
 }
 
 input {
+  font-family: Poppins;
   font-weight: 500;
   font-size: 20px;
   line-height: 27px;
-
   color: #1D4169;
   outline: none;
-
   width: 440px;
   height: 59px;
   padding: 16px 0px 16px 27px;
   border-radius: 40px;
-
   border: none;
-
-
-
-
 }
 
 .inputButton {
@@ -56,34 +33,63 @@ input {
   background: #DF2224;
   outline: none;
   display: block;
-
+  border: none;
   position: absolute;
   right: 8px;
   top: 8px;
   bottom: 8px;
-
   padding: 12px 12px;
-  //display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 40px;
-
+  &:hover {
+    background: #162c4e;
+  }
+  &:active {
+    background: #162c4e;
+  }
 
 }
 .emailError {
   position: absolute;
   color: #ed0c0c;
-
   left: 22px;
   top: 62px;
   font-size: 16px;
   line-height: 20px;
-
-  //margin-top: 1px;
 }
-@media (max-width: 940px) {
+
+.otherEvents {
+  font-family: Poppins;
+  cursor: pointer;
+  height: 30px;
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 45%;
+  right: 10%;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  background: none;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+.arrowDown {
+  height: 100%;
+}
+
+@media (max-width: 1100px) {
   .footer {
     height: 160px;
+  }
+  .inputBox {
+    top: 14%;
   }
   input {
     width: 360px;
@@ -98,19 +104,27 @@ input {
     top: 4px;
     right: 4px;
     padding: 6px 2px 3px 6px;
-
   }
-  .arrow {
 
-  }
   .emailError {
     left: 22px;
     top: 42px;
     font-size: 12px;
     line-height: 20px;
   }
+  .otherEvents {
+    height: 24px;
+    width: 128px;
+    font-size: 16px;
+    top: 62%;
+    right: 42%;
+  }
+}
 
-
+@media (max-width: 460px) {
+  .otherEvents {
+    right: 34%;
+  }
 }
 
 @media (max-width: 360px) {
@@ -121,19 +135,22 @@ input {
   input {
     max-width: 280px;
   }
+  .otherEvents {
+    height: 24px;
+    width: 128px;
+    font-size: 16px;
+    top: 62%;
+    right: 30%;
+  }
 
 
 }
 
 @media (max-width: 300px) {
-
-
   input {
     max-width: 220px;
     font-size: 10px;
   }
-
-
 }
 
 

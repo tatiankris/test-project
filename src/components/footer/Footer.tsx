@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import s from './Footer.module.scss'
 import Popup from "../popup/Popup";
 import arrow from '../../assets/arrow.svg'
+import arrowDown from '../../assets/arrow-down.svg'
+import {Link} from "react-scroll";
 
 function Footer() {
 
@@ -12,7 +14,6 @@ function Footer() {
         if (emailError && e.currentTarget.value) {
             setEmailError('')
         }
-
     }
     const [open, setOpen] = useState(false)
     const openPopupHandler = () => {
@@ -25,10 +26,8 @@ function Footer() {
     const [emailError, setEmailError] = useState('')
 
     const sendEmailHandler = ( e: React.FormEvent<HTMLFormElement>) => {
-
         const email = value.trim()
         e.preventDefault()
-
         if (!email.length) {
             setEmailError('Email is equired!')
         } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
@@ -39,7 +38,6 @@ function Footer() {
         }
 
     }
-
     const fetchQuery = (email: string) => {
         fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
@@ -61,12 +59,6 @@ function Footer() {
 
 
     }
-
-
-
-
-
-
     return (
         <footer className={s.footer}>
             <div className={s.inputBox}>
@@ -81,11 +73,13 @@ function Footer() {
                 </form>
 
             </div>
-
+            <Link className={s.otherEvents} to={"events"} spy={true} smooth={true} offset={50}
+                  duration={500} >Other Events
+            <img className={s.arrowDown} src={arrowDown} />
+        </Link>
             {
                 open && <Popup closePopupHandler={closePopupHandler}/>
             }
-
         </footer>
     )
 }
